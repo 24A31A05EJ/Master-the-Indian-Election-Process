@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Election Assistant | Interactive Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">ELECTION.IN</div>
+            <nav>
+                <button class="btn btn-primary" onclick="scrollToSection('quiz')">Take Quiz</button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Master the Indian Election Process</h1>
+            <p>Explore the journey from voter registration to the declaration of results through interactive tools and real-time guides.</p>
+        </section>
+
+        <section id="timeline-section">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-family: 'Outfit';">The Election Timeline</h2>
+            <div class="timeline" id="election-timeline">
+                <!-- Timeline items will be injected by JS -->
+            </div>
+        </section>
+
+        <section id="flashcards-section" style="margin-top: 5rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-family: 'Outfit';">Key Election Concepts</h2>
+            <div class="flashcards-grid" id="flashcards-container">
+                <!-- Flashcards will be injected by JS -->
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-container" style="margin-top: 5rem;">
+            <div class="glass-card">
+                <h2 style="margin-bottom: 1.5rem; font-family: 'Outfit';">Test Your Knowledge</h2>
+                <div id="quiz-content">
+                    <p id="question-text">Loading question...</p>
+                    <div id="options-container" style="margin-top: 1.5rem;"></div>
+                    <div id="quiz-footer" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span id="score-text">Score: 0</span>
+                        <button id="next-btn" class="btn btn-primary" style="display: none;">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="assistant-section" style="margin-top: 5rem; margin-bottom: 5rem;">
+            <div class="glass-card" style="border-left: 4px solid var(--primary); padding: 2.5rem;">
+                <h2 style="margin-bottom: 1.5rem; font-family: 'Outfit';">Interactive Election Guide</h2>
+                <div id="chat-window" class="chat-window">
+                    <div class="chat-bubble assistant">
+                        Namaste! I am your Election Guide. I can walk you through the entire process of voting in India, from getting your Voter ID to casting your vote. 
+                        <br><br>Where would you like to start?
+                    </div>
+                </div>
+                <div id="chat-controls" class="chat-controls">
+                    <button class="btn btn-primary" onclick="startChat('registration')">Voter Registration</button>
+                    <button class="btn btn-primary" onclick="startChat('roll')">Electoral Roll</button>
+                    <button class="btn btn-primary" onclick="startChat('polling')">Voting Day Process</button>
+                    <button class="btn btn-primary" onclick="startChat('results')">Checking Results</button>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 3rem 0; color: var(--text-muted); font-size: 0.9rem;">
+            <p>© 2026 Indian Election Assistant. Data sourced from ECI official guidelines.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
